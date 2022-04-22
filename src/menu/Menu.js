@@ -1,13 +1,7 @@
 import styles from "./Menu.module.css";
-import { FaHome, FaShoppingCart } from "react-icons/fa";
+import { FaHome, FaShoppingCart, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import clsx from "clsx";
-import {
-  useEffect,
-  useState,
-  useRef,
-  useCallback,
-  useLayoutEffect,
-} from "react";
+import { useEffect, useState, useCallback, useLayoutEffect } from "react";
 import Cart from "./Cart";
 
 const products = [
@@ -17,7 +11,7 @@ const products = [
     name: "product 1",
     cost: 100.0,
     quantity: 3,
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
     categoryID: "C1",
   },
   {
@@ -25,7 +19,7 @@ const products = [
     name: "product 2",
     cost: 120.01,
     quantity: 5,
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
     categoryID: "C1",
   },
   {
@@ -33,7 +27,7 @@ const products = [
     name: "product 3",
     cost: 180.0,
     quantity: 9,
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
     categoryID: "C1",
   },
   {
@@ -41,7 +35,7 @@ const products = [
     name: "product 4",
     cost: 160.5,
     quantity: 11,
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
     categoryID: "C1",
   },
   {
@@ -49,8 +43,24 @@ const products = [
     name: "product 5",
     cost: 133.0,
     quantity: 0,
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
     categoryID: "SF",
+  },
+  {
+    id: 6,
+    name: "product 6",
+    quantity: 0,
+    cost: 1120,
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
+    categoryID: "C1",
+  },
+  {
+    id: 7,
+    name: "product 7",
+    quantity: 0,
+    cost: 1340,
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
+    categoryID: "C1",
   },
 ];
 
@@ -59,34 +69,35 @@ const categories = [
   {
     id: "C1",
     name: "Cupcake",
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
   },
   {
     id: "SF",
     name: "Sea Food",
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
   },
   {
     id: "J",
     name: "Juice",
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
   },
   {
     id: "C2",
     name: "Coca",
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
   },
+
   {
     id: "OJ",
     name: "Orange Juice",
-    photo: "",
+    photo: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/278102238_678797713333845_6499045505306719696_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=y6x7NrN3PhwAX-rXvRc&_nc_ht=scontent.fsgn2-3.fna&oh=03_AVLAdFxc3b5ASfj1dTvn0Xt5xYQGOgWBT0r1yxMIrdYWaQ&oe=627DF761",
   },
 ];
 
-function Menu() {
+function Menu({changeApp}) {
   const [checkDL, setCheckDL] = useState(false);
   const [productDialog, setProductDialog] = useState({});
-  const [checkFocusCategory, setCheckFocusCategory] = useState(categories[0]);
+  const [checkFocusCategory, setCheckFocusCategory] = useState(0);
   const [showCart, setShowCart] = useState(false);
   const [countQuantity, setCountQuantity] = useState(0);
   const [listProductInCart, setListProductInCart] = useState([]);
@@ -110,16 +121,24 @@ function Menu() {
   }, [checkDL]);
 
   useLayoutEffect(() => {
-      if(listProductInCart.length > 1)
-      for (let i = 0; i < listProductInCart.length-1; i++) {
-        if (listProductInCart[i].id === listProductInCart[listProductInCart.length - 1].id ) {
+    if (listProductInCart.length > 1)
+      for (let i = 0; i < listProductInCart.length - 1; i++) {
+        if (
+          listProductInCart[i].id ===
+          listProductInCart[listProductInCart.length - 1].id
+        ) {
           listProductInCart.pop();
-          if(listProductInCart[i].currentQuantity + countQuantity > listProductInCart[i].quantity){
-            listProductInCart[i].currentQuantity = listProductInCart[i].quantity;
-          }else{
-            listProductInCart[i].currentQuantity= listProductInCart[i].currentQuantity + countQuantity;
+          if (
+            listProductInCart[i].currentQuantity + countQuantity >
+            listProductInCart[i].quantity
+          ) {
+            listProductInCart[i].currentQuantity =
+              listProductInCart[i].quantity;
+          } else {
+            listProductInCart[i].currentQuantity =
+              listProductInCart[i].currentQuantity + countQuantity;
           }
-          setListProductInCart([...listProductInCart])
+          setListProductInCart([...listProductInCart]);
           break;
         }
       }
@@ -139,17 +158,23 @@ function Menu() {
         </div>
         <div className={clsx(styles.mid)}>
           <div className={clsx(styles.categories)}>
-            <div></div>
-            {categories.map((category) => (
+            <div style={{ alignSelf: "center", fontSize: 50, cursor: 'pointer',margin: 0 }}
+              onClick={()=>{
+                return  checkFocusCategory >0 ? setCheckFocusCategory(checkFocusCategory - 1) : undefined
+              }}
+            >
+              <FaAngleLeft />
+            </div>
+            {categories.map((category,key) => (
               <div
                 key={category.id}
                 className={clsx(styles.itemCategory)}
                 style={
-                  category === checkFocusCategory
+                  category === categories[checkFocusCategory]
                     ? { backgroundColor: "#2c3a57", color: "#fff" }
                     : {}
                 }
-                onClick={() => setCheckFocusCategory(category)}
+                onClick={() => setCheckFocusCategory(key)}
               >
                 <div className={clsx(styles.categoryWrapperImg)}>
                   <img src={category.photo} alt="" />
@@ -157,18 +182,23 @@ function Menu() {
                 <p>{category.name}</p>
               </div>
             ))}
-
-            <div></div>
+            <div style={{ alignSelf: "center", fontSize: 50, cursor: 'pointer',margin: 0, marginLeft: 'auto', }}
+              onClick={()=>{
+                return  checkFocusCategory < categories.length-1 ? setCheckFocusCategory(checkFocusCategory + 1) : undefined
+              }}
+            >
+              <FaAngleRight />
+            </div>
           </div>
           <div className={clsx(styles.listFood)}>
             <label className={clsx(styles.title)}>
-              {checkFocusCategory.name}
+              {categories[checkFocusCategory].name}
             </label>
             <div className={clsx(styles.itemsFood)}>
               {products.map((product) => {
                 {
                   return (
-                    checkFocusCategory.id === product.categoryID && (
+                    categories[checkFocusCategory].id === product.categoryID && (
                       <div
                         key={product.id}
                         className={clsx(styles.itemFood)}
@@ -317,10 +347,14 @@ function Menu() {
                     <button
                       onClick={() => {
                         setCheckDL((prev) => false);
-                        setListProductInCart((prev) => [
-                          ...prev,
-                          { ...productDialog, currentQuantity: countQuantity },
-                        ]);
+                        if (countQuantity > 0)
+                          setListProductInCart((prev) => [
+                            ...prev,
+                            {
+                              ...productDialog,
+                              currentQuantity: countQuantity,
+                            },
+                          ]);
                       }}
                     >
                       <FaShoppingCart />
@@ -335,7 +369,12 @@ function Menu() {
       </div>
 
       {showCart && (
-        <Cart onShowCart={handleShowCart} listProduct={listProductInCart} />
+        <Cart
+          onShowCart={handleShowCart}
+          listProduct={listProductInCart}
+          setListProduct={setListProductInCart}
+          changeApp = {changeApp}
+        />
       )}
     </div>
   );
