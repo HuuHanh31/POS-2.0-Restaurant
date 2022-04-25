@@ -3,7 +3,7 @@ const router = express.Router();
 const order = require('../controllers/order.controller');
 const validateToken = require('../middlewares/validateToken');
 
-//clerk lay toan bo thong tin tat ca cac don hang trong ngay
+//Clerk get info of all orders
 router.get('/order', validateToken, order.getOrder)
 
 module.exports = router;

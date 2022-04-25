@@ -7,8 +7,6 @@ const order = require('./order.route');
 const admin = require('./admin.route');
 const reserve = require('./reserve.route');
 const profile = require('./profile.route');
-// const order = require('../controllers/order.controller');
-// const validate = require('../middlewares/validateToken');
 
 router.use('/', auth);
 router.use('/', category);
