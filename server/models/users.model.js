@@ -14,9 +14,9 @@ const userSchema = new mongoose.Schema({
     email: reqString,
     fname: {type: String, default: ''},
     lname: {type: String, default: ''},
-    reservations: [String],
     permission: String,
-    phone: {type:String, default: ''}
+    phone: {type:String, default: ''},
+    address: {type:String, default: ''}
 },
     { timestamps: true }
 )
