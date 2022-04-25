@@ -1,6 +1,6 @@
-import Payment from './payment/Payment'
-import Menu from'./menu/Menu'
-import Signin from './signin/Signin'
+import Payment from 'components/Payment'
+import Menu from 'components/Menu'
+import Signin from 'components/Signin'
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
