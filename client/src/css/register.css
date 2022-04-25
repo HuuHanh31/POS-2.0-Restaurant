@@ -9,7 +9,11 @@
   }
 
 section {
-    background-image: linear-gradient(to top right, #1ba9ef, #09efb1);
+    background-image: linear-gradient(to top right, #ef701b, #09efb1);
+}
+
+.headline {
+    margin-top: 20px;
 }
 
 .wrapper{
@@ -22,7 +26,7 @@ section {
     outline: none;
     border-bottom: 1px solid #1ba9ef;
     transition: .25s ease;
-    height: 50px;
+    height: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -60,4 +64,8 @@ span{
     left: 0;
     font-size: 13px;
     color: red;
+}
+
+a {
+    text-decoration: none;
 }
