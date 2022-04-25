@@ -15,9 +15,9 @@ export default function Footer() {
       }}
     >
       <p style={{ margin: "auto 0" }}>
-        D8 ABC, ABC District, Hanoi, Vietnam <br />
+        L81 TD, Thu Duc District, Ho Chi Minh, Vietnam <br />
         Phone 84 12 3456 7890 Fax 84 12 3456 7890
-        <p>abc@Brestaurant.com.vn</p>
+        <p>hola@freshrestaurant.com.vn</p>
         <p style={{ marginTop: 20 }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ export default function Footer() {
         </p>
       </p>
 
-      <p style={{ fontSize: 12 }}>© Copyright Ahihi Restaurant 2022</p>
+      <p style={{ fontSize: 12 }}>© Copyright Fresh Restaurant 2022</p>
     </div>
   );
 }
