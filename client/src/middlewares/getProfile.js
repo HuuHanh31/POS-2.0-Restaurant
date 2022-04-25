@@ -4,7 +4,7 @@ export default function getProfile() {
         const token = localStorage.getItem('TOKEN') || null;
         if (token) {
             let reqOptions = {
-                url: `http://localhost:4000/profile?`,
+                url: `http://localhost:5000/profile?`,
                 params: { 
                     token
                 },

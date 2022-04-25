@@ -5,7 +5,7 @@ const postReserve = (reserveInfo) => {
         const token = localStorage.getItem('TOKEN') || null;
         if (token) {
             let reqOptions = {
-                url: `http://localhost:4000/reserve`,
+                url: `http://localhost:5000/reserve`,
                 params: { 
                     token: token,
                     data: reserveInfo

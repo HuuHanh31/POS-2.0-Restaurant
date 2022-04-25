@@ -4,7 +4,7 @@ export default function getOrder(status = null, process = 'cooking') {
         const token = localStorage.getItem('TOKEN') || null;
         if (token) {
             let reqOptions = {
-                url: `http://localhost:4000/order?status=${status}&&process=${process}`,
+                url: `http://localhost:5000/order?status=${status}&&process=${process}`,
                 params: { token },
                 method: "GET",
             }

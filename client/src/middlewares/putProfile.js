@@ -5,7 +5,7 @@ const putProfile = (profile) => {
         const token = localStorage.getItem('TOKEN') || null;
         if (token) {
             let reqOptions = {
-                url: `http://localhost:4000/profile`,
+                url: `http://localhost:5000/profile`,
                 params: { 
                     token: token,
                     fname: profile.fname,

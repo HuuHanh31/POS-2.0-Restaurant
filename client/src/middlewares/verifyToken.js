@@ -4,7 +4,7 @@ export default function auth() {
         const token = localStorage.getItem('TOKEN') || null;
         if (token) {
             let reqOptions = {
-                url: "http://localhost:4000/info",
+                url: "http://localhost:5000/info",
                 params: { token },
                 method: "GET"
             }
