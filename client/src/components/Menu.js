@@ -1,4 +1,4 @@
-import styles from "./Menu.module.css";
+import styles from "../css/Menu.module.css";
 import {
   FaHome,
   FaShoppingCart,
@@ -8,8 +8,8 @@ import {
 import clsx from "clsx";
 import { useEffect, useState, useCallback, useLayoutEffect } from "react";
 import Cart from "./Cart";
-import Signin from "../signin/Signin";
-import {categories, products} from "../DataAPI.js"
+import Signin from "./Signin";
+import {categories, products} from "../DataAPI"
 
 
 function Menu({ changeApp }) {
