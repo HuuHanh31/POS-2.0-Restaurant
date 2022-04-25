@@ -1,5 +1,3 @@
-import { checkboxClasses } from "@mui/material";
-
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {

@@ -1,6 +1,4 @@
-//fake call api
 export const products = [
-    ////fake call api
     {
       id: 1,
       name: "product 1",
@@ -67,7 +65,6 @@ export const products = [
   ];
   
 export  const categories = [
-    //fake call api
     {
       id: "C1",
       name: "Cupcake",

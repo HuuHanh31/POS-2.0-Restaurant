@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import styles from "./Signin.module.css";
+import styles from "../css/Signin";
 function Signin({onShowLogin}){
     return (
         <div className= {clsx(styles.wrapper)} >
@@ -9,17 +9,15 @@ function Signin({onShowLogin}){
                     <div style={{width: '100%', position: 'relative'}}>
                         <input className= {clsx(styles.loginInput)}type="text" name="" placeholder=" " id="username"/>
                         <label className={clsx(styles.formLabel)} for="username">Username</label>
-                        {/* <span>error message</span> */}
                     </div>
                     <div style={{width: '100%', position: 'relative', marginTop: 50}}>
                         <input className= {clsx(styles.loginInput)}type="password" name="" placeholder=" " id="password"/>
                         <label className={clsx(styles.formLabel)} for="password">Password</label>
-                        {/* <span>error message</span> */}
                     </div>
                     <button className={clsx(styles.submitForm)}>NEXT</button>
                 </form>
                 <br/>
-                <a href="../signup/register.html">Sign up</a>
+                <a href="register.html">Sign up</a>
             </div>
             <div className={clsx(styles.outside)} onClick={()=> onShowLogin()}>
 
