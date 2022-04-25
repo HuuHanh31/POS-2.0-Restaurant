@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from "react";
-import styles from "./Menu.module.css";
+import styles from "../css/Menu.module.css";
 import clsx from "clsx";
 import { FaHome, FaShoppingCart } from "react-icons/fa";
 

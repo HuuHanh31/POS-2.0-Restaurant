@@ -1,4 +1,4 @@
-import styles from "./Payment.module.css";
+import styles from "../css/Payment.module.css";
 import clsx from "clsx";
 import { FaArrowLeft } from "react-icons/fa";
 function Payment({changeApp}) {
