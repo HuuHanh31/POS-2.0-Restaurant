@@ -1,15 +1,18 @@
 import Payment from './components/Payment'
 import Menu from './components/Menu'
-import Home from "./components/Admin/home/Home";
-import Login from "./components/Admin/login/Login";
-import List from "./components/Admin/list/List";
-import ProductsList from "./components/Admin/productsList/ProductsList";
-import Single from "./components/Admin/single/Single";
-import New from "./components/Admin/new/New";
-import Newproducts from "./components/Admin/newproducts/Newproducts";
+import Signin from './components/Signin'
+import Home from "../src/components/Admin/home/Home";
+import Login from "./pages/login/Login";
+import List from "./pages/list/List";
+import ProductsList from "./pages/productsList/ProductsList";
+import Single from "./pages/single/Single";
+import New from "./pages/new/New";
+import Newproducts from "./pages/newproducts/Newproducts";
 import {  Routes, Route } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
-import "./css/dark.scss";
+import "./style/dark.scss";
+import { useContext } from "react";
+import { DarkModeContext } from "./context/darkModeContext";
 import {useState} from 'react'
 function App() {
   const [app, setApp] = useState('Menu')
