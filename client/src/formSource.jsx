@@ -81,9 +81,9 @@ export const userInputs = [
     },
     {
       id: 7,
-      label: "Food decoration",
+      label: "Categories",
       type: "text",
-      placeholder: "5",
+      placeholder: "Drinks",
     },
     {
       id: 8,

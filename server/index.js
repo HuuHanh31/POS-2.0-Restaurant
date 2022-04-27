@@ -14,10 +14,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const db = require('./config/db_connect');
-db.connect(process.env.MONGO_URI);
+const db = require('./config/db');
+db.connect();
 
-const port = process.env.PORT || 5000;
+const port = 4000;
 
 app.use('/', router);
 

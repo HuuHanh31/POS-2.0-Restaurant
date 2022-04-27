@@ -1,18 +1,18 @@
-import axios from 'axios';
-export default function getOrder(status = null, process = 'cooking') {
+const jwt = require("jsonwebtoken");
+const verifyToken = (req, res, next) => {
+    const token =
+        req.body.token || req.query.token || req.headers["x-access-token"];
+    console.log(1)
+    if (!token) {
+        return res.json("A token is required for authentication");
+    }
     try {
-        const token = localStorage.getItem('TOKEN') || null;
-        if (token) {
-            let reqOptions = {
-                url: `http://localhost:4000/order?status=${status}&&process=${process}`,
-                params: { token },
-                method: "GET",
-            }
-            return axios.request(reqOptions)
-        }
-        else return null;
+        const decoded = jwt.verify(token, process.env.SECRET);
+        req.user = decoded;
+    } catch (err) {
+        return res.json("Invalid Token");
     }
-    catch (e) {
-        console.log(e);
-    }
-}
+    return next();
+};
+
+module.exports = verifyToken;

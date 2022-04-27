@@ -1,7 +1,6 @@
 const Category = require('../models/category.model');
 
 module.exports = {
-
     getAllProducts(req, res) {
         Category.find({}, (error, category) => {
             res.status(200).json(category);

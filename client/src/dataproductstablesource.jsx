@@ -1,3 +1,5 @@
+import { checkboxClasses } from "@mui/material";
+
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {
@@ -35,8 +37,8 @@ export const userColumns = [
     width: 150,
   },
   {
-    field: "fooddecoration",
-    headerName: "Food decoration",
+    field: "categories",
+    headerName: "Categories",
     width: 150,
   },
   {
@@ -57,13 +59,13 @@ export const userColumns = [
 export const userRows = [
   {
     id: 1,
-    name: "Snow",
+    username: "Snow",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     price: "100",
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks"
     
   },
   {
@@ -74,7 +76,7 @@ export const userRows = [
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks"
   },
   {
     id: 3,
@@ -84,7 +86,7 @@ export const userRows = [
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks"
   },
   {
     id: 4,
@@ -94,7 +96,7 @@ export const userRows = [
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks"
   },
   {
     id: 5,
@@ -104,7 +106,7 @@ export const userRows = [
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks",
   },
   {
     id: 6,
@@ -114,7 +116,7 @@ export const userRows = [
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks"
   },
   {
     id: 7,
@@ -124,7 +126,7 @@ export const userRows = [
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks"
   },
   {
     id: 8,
@@ -134,7 +136,7 @@ export const userRows = [
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks"
   },
   {
     id: 9,
@@ -144,7 +146,7 @@ export const userRows = [
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks"
   },
   {
     id: 10,
@@ -154,6 +156,6 @@ export const userRows = [
     protein: "pro",
     additives: "35",
     bakingmaterial: "35",
-    fooddecoration: "35",
+    categories: "Drinks"
   },
 ];

@@ -1,18 +1,19 @@
-import Payment from './components/Payment'
-import Menu from './components/Menu'
-import Signin from './components/Signin'
-import Home from "../src/components/Admin/home/Home";
-import Login from "./pages/login/Login";
-import List from "./pages/list/List";
-import ProductsList from "./pages/productsList/ProductsList";
-import Single from "./pages/single/Single";
-import New from "./pages/new/New";
-import Newproducts from "./pages/newproducts/Newproducts";
+import Payment from './components/payment/Payment'
+import Menu from'./components/menu/Menu'
+import Signin from './components/signin/Signin'
+import Home from "./components/pages/home/Home";
+import Register from './components/register/Register';
+import Login from "./components/pages/login/Login";
+import List from "./components/pages/list/List";
+import ProductsList from "./components/pages/productsList/ProductsList";
+import Single from "./components/pages/single/Single";
+import New from "./components/pages/new/New";
+import Newproducts from "./components/pages/newproducts/Newproducts";
 import {  Routes, Route } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
-import { DarkModeContext } from "./context/darkModeContext";
+import { DarkModeContext } from "./components/context/darkModeContext";
 import {useState} from 'react'
 function App() {
   const [app, setApp] = useState('Menu')
@@ -47,6 +48,13 @@ function App() {
                 path="new"
                 element={<Newproducts inputs={productInputs} title="Edit Product" />}
               />
+            </Route>
+
+            <Route path="orders">
+              <Route index element={<Home />} />
+            </Route>
+            <Route path="register">
+              <Route index element={<Register />} />
             </Route>
           </Route>
         </Routes>
