@@ -10,24 +10,24 @@ module.exports = {
                 if (value) {
                     const token = jwt.sign({
                         email: req.body.email,
-                        permission: oldUser.permission
+                        permission: oldUser.permission,
                     }, process.env.SECRET, {
                         expiresIn: 60 * 60
                     })
                     return res.json({
                         success: 1,
-                        message: 'Dang nhap thanh cong',
+                        message: 'Login successfully',
                         token
                     });
                 }
                 return res.json({
                     success: 0,
-                    message: 'Sai mat khau',
+                    message: 'Wrong password',
                 })
             }
             return res.json({
                 success: 0,
-                message: 'Tai khoan khong ton tai'
+                message: 'Invalid account'
             })
         } catch (error) {
             res.json({
@@ -42,13 +42,15 @@ module.exports = {
             if (oldUser) {
                 return res.status(200).json({
                     success: 0,
-                    message: 'Tai khoan da ton tai'
+                    message: 'Account is existed'
                 })
             }
             const user = new User({
                 username: req.body.username,
                 password: await bcrypt.hash(req.body.password, 10),
                 email: req.body.email,
+                phone: req.body.phone,
+                address: req.body.address,
                 permission: 'customer'
             })
             await user.save();
@@ -60,7 +62,7 @@ module.exports = {
             })
             res.status(201).json({
                 success: 1,
-                message: 'Dang ki thanh cong',
+                message: 'Successfull registration',
             });
         } catch (error) {
             res.status(500).json({

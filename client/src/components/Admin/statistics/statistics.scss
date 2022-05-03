@@ -1,0 +1,166 @@
+.dateRangePicker {
+    margin: auto;
+    align-items: center;
+    padding: auto;
+  }
+  .dateRange {
+    z-index: 50;
+    display: inline-block;
+    width: 100%;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .dateRange .MuiSvgIcon-root {
+    float: right;
+    font-size: 30px;
+  }
+  
+  .dateRange .MuiSvgIcon-root:hover {
+    cursor: pointer;
+    color: darkblue;
+  }
+  .dateRange .TextField {
+    float: right;
+    margin-left: 1rem;
+  }
+  
+  .Popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .PopupInner {
+    position: relative;
+    padding: 32px;
+    width: fit-content;
+    background-color: white;
+    height: 640px;
+    border-radius: 20px;
+  }
+  
+  .PopupInner .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  .NumOfProducts .Header {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .Statistics {
+    padding: 2rem;
+  }
+
+  .list {
+    display: flex;
+    width: 100%;
+    .listContainer {
+      flex: 6;
+    }
+  }
+  
+  @import "variable";
+  .admin {
+    font-size: 1.6rem;
+    .body {
+      margin-top: 10px;
+    }
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      box-shadow: $box-shadow;
+      background-color: $white-color;
+  
+      .filter {
+  
+        margin: auto 2rem;
+        display: flex;
+  
+        p {
+          font-size: 2rem;
+          font-weight: 700;
+          margin: 20px 0;
+        }
+  
+        span {
+          font-size: 1.6rem;
+          font-weight: 500;
+          line-height: 1.6;
+          margin-left: 20px;
+          cursor: pointer;
+  
+          &:hover {
+            opacity: 0.8;
+            background-color: $bg-color;
+          }
+        }
+        
+        .option--active {
+          color: $primary-color;
+        }
+      }
+      
+      a,
+      .btn-showCart {
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: $text-color;
+        height: 60px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 30px;
+        &:hover {
+          background-color: $text-color;
+          color: $white-color;
+          .MuiSvgIcon-root {
+            background-color: $white-color;
+            color: $text-color;
+          }
+        }
+      }
+      .MuiSvgIcon-root {
+        text-decoration: none;
+        font-size: 2.4rem;
+        border-radius: 6px;
+        color: $white-color;
+        background-color: $text-color;
+        margin: 0 10px;
+      }
+    }
+  
+  
+  
+    table {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table td,
+    table th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    table tr:hover {
+      background-color: #ddd;
+    }
+    table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: $primary-color;
+      color: white;
+    }
+  }

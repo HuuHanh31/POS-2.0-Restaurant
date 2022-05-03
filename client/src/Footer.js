@@ -3,9 +3,9 @@ export default function Footer() {
     <div
       style={{
         width: "100%",
-        height: 200,
+        height: 180,
         marginTop: 50,
-        backgroundColor: "red",
+        backgroundColor: "black",
         color: "white",
         textAlign: "center",
         display: "flex",
@@ -14,10 +14,9 @@ export default function Footer() {
         padding: 20,
       }}
     >
-      <p style={{ margin: "auto 0" }}>
-        D8 ABC, ABC District, Hanoi, Vietnam <br />
-        Phone 84 12 3456 7890 Fax 84 12 3456 7890
-        <p>abc@Brestaurant.com.vn</p>
+      <p style={{ margin: "5px 10px 30px 10px" }}>
+        <p style={{ marginBottom: 15 }}>268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh</p>
+        <p>Phone 84 12 3456 7890</p>
         <p style={{ marginTop: 20 }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +51,7 @@ export default function Footer() {
         </p>
       </p>
 
-      <p style={{ fontSize: 12 }}>© Copyright Ahihi Restaurant 2022</p>
+      <p style={{ fontSize: 12 }}>© Copyright Restaurant 2022</p>
     </div>
   );
 }

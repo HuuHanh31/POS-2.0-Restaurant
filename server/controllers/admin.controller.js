@@ -5,7 +5,7 @@ const User = require('../models/user.model');
 module.exports = {
     
     getAllEmployee(req, res) {
-        User.find({ permission: { "$in": ["clerk", "kitchen"] } }, (err, employee) => {
+        User.find({ permission: { "$in": ["shipper","customer","chef"] } }, (err, employee) => {
             res.status(200).json(employee);
         })
     },

@@ -16,23 +16,23 @@ const Navbar = () => {
           <SearchOutlinedIcon />
         </div>
         <div className="items">
-          <div className="item">
+          {/* <div className="item">
             <LanguageOutlinedIcon className="icon" />
             English
-          </div>
-          <div className="item">
+          </div> */}
+          {/* <div className="item">
             <DarkModeOutlinedIcon
               className="icon"
               onClick={() => dispatch({ type: "TOGGLE" })}
             />
-          </div>
-          <div className="item">
+          </div> */}
+          {/* <div className="item">
             <img
-              src="/public/image/topavatar.png"
+              src="admin.png"
               alt=""
               className="avatar"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

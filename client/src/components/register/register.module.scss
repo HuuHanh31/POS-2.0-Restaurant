@@ -1,0 +1,116 @@
+@import "variable";
+
+.home {
+    .header {
+        height: 70px;
+        box-shadow: $box-shadow;
+        background-color: $black-color;
+        display: flex;
+        justify-content: space-between;
+        ul {
+            padding-left: 0;
+            list-style: none;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+        li {
+            transition: $linear-3;
+            a {
+                transition: $linear-3;
+                color: $white-color;
+                text-decoration: none;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                span {
+                    margin-right: 10px;
+                    font-size: 1.8rem;
+                }
+                .MuiSvgIcon-root {
+                    font-size: 1.6rem;
+                }
+            }
+            &:hover {
+                background-color: $text-color;
+                a {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
+
+.form {
+    width: 500px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
+
+.loginInput {
+    background: transparent;
+    outline: none;
+    width: 100%;
+    border: 1px solid red;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 6px;
+    padding: px;  
+    transition: ease 0.25s;
+}
+
+.loginInput:focus + .formLabel, .loginInput:not(:placeholder-shown) + .formLabel{
+    top: 0px;
+    background-color: #fff;
+    color: red;
+    padding: 0 10px;
+    margin: 0 10px;
+}
+.formLabel {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 30px;
+    user-select: none;
+    color: #999;
+    transition: ease 0.25s;
+}
+
+
+
+.loginInput:focus {
+    box-shadow: 0px 0px 5px 0px rgba(255, 0, 0, 0.5);
+}
+
+.submitForm{
+    width: 100%;
+    height: 60px;
+    margin-top: 30px;
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    transition: ease 0.25s;
+    border-radius: 10px;
+}
+
+.submitForm:hover{
+    box-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 0.5);
+}
+
+.outside{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

@@ -31,6 +31,7 @@ module.exports = {
                 theProfile.phone = req.query.phone || theProfile.username;
                 theProfile.fname = req.query.fname || theProfile.fname;
                 theProfile.lname = req.query.lname || theProfile.lname;
+                theProfile.address = req.query.address || theProfile.address;
                 // theProfile.push({
                 //     'username': req.body.username,
                 //     'fname': req.body.firstname,

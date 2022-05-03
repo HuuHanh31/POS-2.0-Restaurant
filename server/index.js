@@ -23,46 +23,65 @@ app.use('/', router);
 
 const Order = require('./models/order.model');
 const order = require('./controllers/order.controller');
-// io.on('connection', (socket) => {
-//     socket.on('postOrder', (data, res) => {
-//         order.postPayment(data, res, io);
-//     });
-//     socket.on('confirmed', async (orderID) => {
-//         const order = await Order.findOne({ orderID });
-//         if (order) {
-//             order.status = 'confirmed';
-//             order.process = 'cooking';
-//             await order.save();
-//             io.emit(orderID, 'confirmed');
-//             io.emit('kitchen');
-//         }
-//     })
-//     socket.on('cancel', async (orderID) => {
-//         try {
-//             const order = await Order.findOne({ orderID });
-//             if (order) {
-//                 order.status = 'cancel';
-//                 await order.save();
-//                 io.emit(orderID, 'cancel')
-//             }
-//         }
-//         catch (err) {
-//             console.log(err);
-//         }
-//     })
-//     socket.on('done', async (orderID) => {
-//         try {
-//             const order = await Order.findOne({ orderID });
-//             if (order) {
-//                 order.process = 'done';
-//                 await order.save();
-//             }
-//         }
-//         catch (err) {
-//             console.log(err);
-//         }
-//     })
-// })
+io.on('connection', (socket) => {
+    socket.on('postOrder', (data, res) => {
+        order.postPayment(data, res, io);
+    });
+    socket.on('confirmed', async (orderID) => {
+        const order = await Order.findOne({ orderID });
+        if (order) {
+            order.status = 'confirmed';
+            order.process = 'cooking';
+            await order.save();
+            io.emit(orderID, 'confirmed');
+            io.emit('chef');
+        }
+    })
+    socket.on('cancel', async (orderID) => {
+        try {
+            const order = await Order.findOne({ orderID });
+            if (order) {
+                order.status = 'cancel';
+                await order.save();
+                io.emit(orderID, 'cancel')
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    })
+    socket.on('cooked', async (orderID) => {
+        try {
+            const order = await Order.findOne({ orderID });
+            if (order) {
+                order.process = 'cooked';
+                await order.save();
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    })
+    socket.on('shipping', async (orderID) => {
+        const order = await Order.findOne({ orderID });
+        if (order) {
+            order.process = 'shipping';
+            await order.save();
+            io.emit(orderID, 'shipping');
+            io.emit('shipper');
+        }
+    })
+    socket.on('delivered', async (orderID) => {
+        const order = await Order.findOne({ orderID });
+        if (order) {
+            order.process = 'delivered';
+            await order.save();
+            io.emit(orderID, 'delivered');
+            // io.emit('shipper');
+        }
+    })
+    
+})
 
 
 
