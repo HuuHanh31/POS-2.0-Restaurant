@@ -26,8 +26,6 @@ npm install
 npm start
 ```
 
-<br>
-<br>
 * Tương tự vào, vào folder client, chạy lệnh
 
 ```
