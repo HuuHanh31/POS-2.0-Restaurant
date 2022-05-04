@@ -545,7 +545,7 @@ export default function Menu() {
                               onClick={() => addToCart()}
                             >
                               <FaShoppingCart />
-                              &ensp;&nbsp;Add to cart
+                              &ensp;&nbsp;Thêm vào giỏ hàng
                             </button>
                           </div>
                         </div>

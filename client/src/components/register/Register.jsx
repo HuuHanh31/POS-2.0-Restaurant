@@ -145,7 +145,7 @@ export default function Register({onShowRegister,changeApp}) {
                         <h1 style= {{textAlign: 'center', marginBottom: 45}}>Đăng kí</h1>
                         <div style={{width: '100%', position: 'relative'}}>
                             <input className= {clsx(styles.loginInput)}type="text" name="name" id="name"  placeholder="" onChange={handleOnchangeUsername}/>
-                            <label className={clsx(styles.formLabel)} for="name">Username</label>
+                            <label className={clsx(styles.formLabel)} for="name">Tên đăng nhập</label>
 
                             
                         </div>
@@ -156,18 +156,18 @@ export default function Register({onShowRegister,changeApp}) {
                         </div>
                         <div style={{width: '100%', position: 'relative', marginTop: 40}}>
                             <input className= {clsx(styles.loginInput)}type="password" name="password" id='password' onChange={handleOnchangePass} />
-                            <label className={clsx(styles.formLabel)} for="password">Password</label>
+                            <label className={clsx(styles.formLabel)} for="password">Mật Khẩu</label>
                             
                         </div>
 
                         <div style={{width: '100%', position: 'relative', marginTop: 40}}>
                             <input className= {clsx(styles.loginInput)}type="phone" name="phone" id='phone' onChange={handleOnchangePhone} />
-                            <label className={clsx(styles.formLabel)} for="phone">Phone</label>
+                            <label className={clsx(styles.formLabel)} for="phone">Điện thoại</label>
                             
                         </div>
                         <div style={{width: '100%', position: 'relative', marginTop: 40}}>
                             <input className= {clsx(styles.loginInput)}type="address" name="address" id='address' onChange={handleOnchangeAddress} />
-                            <label className={clsx(styles.formLabel)} for="address">Address</label>
+                            <label className={clsx(styles.formLabel)} for="address">Địa chỉ</label>
                             
                         </div>
 

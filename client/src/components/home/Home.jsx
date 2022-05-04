@@ -106,7 +106,7 @@ export default function Home() {
                     <img src=".\logo.png" alt='logo'/>    
                     <ReactTypingEffect
                         speed={85}
-                        text={["Welcome to restaurant 2.0"]}
+                        text={["Chào mừng đến với nhà hàng 2.0"]}
                         cursorRenderer={cursor => <h1>{cursor}</h1>}
                         displayTextRenderer={(text, i) => {
                             return (
