@@ -1,4 +1,4 @@
-# Hướng dẫn chạy code restaurant-cnpm
+# POS RESTAURANT 2.0
 ### Thiết lập môi trường
 * Cài đặt **Nodejs** 14.xx
 * Sau khi cài đặt **Nodejs** mặc định sẽ có npm nhưng chúng ta phải cập nhật bằng lệnh
